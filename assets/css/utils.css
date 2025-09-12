@@ -1,0 +1,151 @@
+/* flexbox utils */
+.flex-rows { display: flex; }
+.flex-cols { display: flex; flex-direction: column; }
+.flex-center-justify { justify-content: center; }
+
+/* positional utils */
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed { position: fixed; }
+
+.translate-center { transform: translateX(-50%) translateY(-50%); }
+.abs-center { top:50%; left:50%; }
+.abs-topleft { top:0; left:0; }
+.abs-topcenter { top:0; left:50%; }
+.abs-topright { top:0; right:0; }
+.abs-centerleft { top:50%; left:0; }
+.abs-centerright { top:50%; right:0; }
+.abs-bottomleft { bottom:0; left:0; }
+.abs-bottomcenter { bottom:0; left:50%; }
+.abs-bottomright { bottom:0; right:0; }
+
+/* image utils */
+.contain { object-fit: contain; }
+.cover { object-fit: cover; }
+
+/* margin utils */
+.m5 { margin: 5px; }
+.m10 { margin: 10px; }
+.m15 { margin: 15px; }
+.m20 { margin: 20px; }
+.m25 { margin: 25px; }
+.m30 { margin: 30px; }
+.m40 { margin: 40px; }
+.m50 { margin: 50px; }
+.m100 { margin: 100px; }
+.m150 { margin: 150px; }
+.m200 { margin: 200px; }
+
+.mtop5 { margin-top: 5px; }
+.mtop10 { margin-top: 10px; }
+.mtop15 { margin-top: 15px; }
+.mtop20 { margin-top: 20px; }
+.mtop25 { margin-top: 25px; }
+.mtop30 { margin-top: 30px; }
+.mtop40 { margin-top: 40px; }
+.mtop50 { margin-top: 50px; }
+.mtop100 { margin-top: 100px; }
+.mtop150 { margin-top: 150px; }
+.mtop200 { margin-top: 200px; }
+
+.mbottom5 { margin-bottom: 5px; }
+.mbottom10 { margin-bottom: 10px; }
+.mbottom15 { margin-bottom: 15px; }
+.mbottom20 { margin-bottom: 20px; }
+.mbottom25 { margin-bottom: 25px; }
+.mbottom30 { margin-bottom: 30px; }
+.mbottom40 { margin-bottom: 40px; }
+.mbottom50 { margin-bottom: 50px; }
+.mbottom100 { margin-bottom: 100px; }
+.mbottom150 { margin-bottom: 150px; }
+.mbottom200 { margin-bottom: 200px; }
+
+.mleft5 { margin-left: 5px; }
+.mleft10 { margin-left: 10px; }
+.mleft15 { margin-left: 15px; }
+.mleft20 { margin-left: 20px; }
+.mleft25 { margin-left: 25px; }
+.mleft30 { margin-left: 30px; }
+.mleft40 { margin-left: 40px; }
+.mleft50 { margin-left: 50px; }
+.mleft100 { margin-left: 100px; }
+.mleft150 { margin-left: 150px; }
+.mleft200 { margin-left: 200px; }
+
+.mright5 { margin-right: 5px; }
+.mright10 { margin-right: 10px; }
+.mright15 { margin-right: 15px; }
+.mright20 { margin-right: 20px; }
+.mright25 { margin-right: 25px; }
+.mright30 { margin-right: 30px; }
+.mright40 { margin-right: 40px; }
+.mright50 { margin-right: 50px; }
+.mright100 { margin-right: 100px; }
+.mright150 { margin-right: 150px; }
+.mright200 { margin-right: 200px; }
+
+/* padding utils */
+.p5 { padding: 5px; }
+.p10 { padding: 10px; }
+.p15 { padding: 15px; }
+.p20 { padding: 20px; }
+.p25 { padding: 25px; }
+.p30 { padding: 30px; }
+.p40 { padding: 40px; }
+.p50 { padding: 50px; }
+.p100 { padding: 100px; }
+.p150 { padding: 150px; }
+.p200 { padding: 200px; }
+
+.ptop5 { padding-top: 5px; }
+.ptop10 { padding-top: 10px; }
+.ptop15 { padding-top: 15px; }
+.ptop20 { padding-top: 20px; }
+.ptop25 { padding-top: 25px; }
+.ptop30 { padding-top: 30px; }
+.ptop40 { padding-top: 40px; }
+.ptop50 { padding-top: 50px; }
+.ptop100 { padding-top: 100px; }
+.ptop150 { padding-top: 150px; }
+.ptop200 { padding-top: 200px; }
+
+.pbottom5 { padding-bottom: 5px; }
+.pbottom10 { padding-bottom: 10px; }
+.pbottom15 { padding-bottom: 15px; }
+.pbottom20 { padding-bottom: 20px; }
+.pbottom25 { padding-bottom: 25px; }
+.pbottom30 { padding-bottom: 30px; }
+.pbottom40 { padding-bottom: 40px; }
+.pbottom50 { padding-bottom: 50px; }
+.pbottom100 { padding-bottom: 100px; }
+.pbottom150 { padding-bottom: 150px; }
+.pbottom200 { padding-bottom: 200px; }
+
+.pleft5 { padding-left: 5px; }
+.pleft10 { padding-left: 10px; }
+.pleft15 { padding-left: 15px; }
+.pleft20 { padding-left: 20px; }
+.pleft25 { padding-left: 25px; }
+.pleft30 { padding-left: 30px; }
+.pleft40 { padding-left: 40px; }
+.pleft50 { padding-left: 50px; }
+.pleft100 { padding-left: 100px; }
+.pleft150 { padding-left: 150px; }
+.pleft200 { padding-left: 200px; }
+
+.pright5 { padding-right: 5px; }
+.pright10 { padding-right: 10px; }
+.pright15 { padding-right: 15px; }
+.pright20 { padding-right: 20px; }
+.pright25 { padding-right: 25px; }
+.pright30 { padding-right: 30px; }
+.pright40 { padding-right: 40px; }
+.pright50 { padding-right: 50px; }
+.pright100 { padding-right: 100px; }
+.pright150 { padding-right: 150px; }
+.pright200 { padding-right: 200px; }
+
+/* debug utils */
+.debug1 { background-color: red; }
+.debug2 { background-color: green; }
+.debug3 { background-color: blue; }
