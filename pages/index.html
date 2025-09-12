@@ -28,6 +28,7 @@
             line-height: 1.6;
             overflow-x: hidden;
             background-color: var(--lightest);
+            scroll-behavior: smooth;
         }
         
         h1, h2, h3, h4, h5 {
@@ -104,113 +105,86 @@
             background-color: var(--darker);
         }
         
-        /* Hero Section with Mountains and Floating Elements */
+        /* Hero Section with Updated Gradient and Background Image */
         .hero {
             height: 100vh;
             display: flex;
             align-items: center;
             position: relative;
             overflow: hidden;
-            background: linear-gradient(to bottom, #c6e2c6, #E0F6FF);
+            background: linear-gradient(to bottom, #c6e2c6, #d8ead8);
+            /* Adding the background image with a subtle overlay */
+            background-image: 
+                linear-gradient(to bottom, rgba(198, 226, 198, 0.8), rgba(216, 234, 216, 0.8)),
+                url('assets/bg.png');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
         }
         
-        .mountain-background {
+        .floating-icons-container {
             position: absolute;
-            bottom: 0;
+            top: 25%;
             left: 0;
             width: 100%;
-            height: 30%;
-            background: 
-                /* Mountains */
-                linear-gradient(to bottom right, transparent 49%, var(--secondary) 50%),
-                linear-gradient(to bottom left, transparent 49%, var(--secondary) 50%),
-                linear-gradient(to bottom right, transparent 49%, var(--dark) 50%),
-                linear-gradient(to bottom left, transparent 49%, var(--dark) 50%),
-                linear-gradient(to bottom right, transparent 49%, var(--darker) 50%),
-                linear-gradient(to bottom left, transparent 49%, var(--darker) 50%);
-            background-size: 
-                20% 100%,
-                20% 100%,
-                15% 80%,
-                15% 80%,
-                10% 60%,
-                10% 60%;
-            background-position: 
-                0% 100%,
-                20% 100%,
-                40% 100%,
-                60% 100%,
-                80% 100%,
-                100% 100%;
-            background-repeat: no-repeat;
-            z-index: 1;
+            display: flex;
+            justify-content: center;
+            z-index: 15;
+            pointer-events: none;
         }
         
-        .floating-elements {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 2;
+        .floating-icons {
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+            max-width: 800px;
         }
         
-        .floating-square {
-            position: absolute;
-            width: 80px;
-            height: 80px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
+        .floating-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
             animation: float 6s ease-in-out infinite;
         }
         
-        .floating-square:nth-child(1) {
-            top: 20%;
-            left: 10%;
+        .floating-icon:nth-child(1) {
             animation-delay: 0s;
-            background-color: rgba(154, 194, 164, 0.8);
+            background-color: rgba(154, 194, 164, 0.9);
         }
         
-        .floating-square:nth-child(2) {
-            top: 30%;
-            right: 15%;
+        .floating-icon:nth-child(2) {
             animation-delay: 1s;
-            background-color: rgba(116, 173, 140, 0.8);
+            background-color: rgba(116, 173, 140, 0.9);
         }
         
-        .floating-square:nth-child(3) {
-            top: 60%;
-            left: 20%;
+        .floating-icon:nth-child(3) {
             animation-delay: 2s;
-            background-color: rgba(124, 135, 124, 0.8);
+            background-color: rgba(124, 135, 124, 0.9);
         }
         
-        .floating-square:nth-child(4) {
-            top: 50%;
-            right: 10%;
+        .floating-icon:nth-child(4) {
             animation-delay: 3s;
-            background-color: rgba(42, 86, 66, 0.8);
+            background-color: rgba(42, 86, 66, 0.9);
         }
         
-        .floating-square:nth-child(5) {
-            top: 70%;
-            right: 30%;
+        .floating-icon:nth-child(5) {
             animation-delay: 4s;
-            background-color: rgba(33, 51, 43, 0.8);
+            background-color: rgba(33, 51, 43, 0.9);
         }
         
-        .floating-square i {
-            font-size: 2rem;
+        .floating-icon i {
+            font-size: 1.8rem;
             color: white;
         }
         
         @keyframes float {
             0% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
+            50% { transform: translateY(-15px) rotate(3deg); }
             100% { transform: translateY(0) rotate(0deg); }
         }
         
@@ -221,6 +195,7 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 0 1rem;
+            margin-top: 80px;
         }
         
         .hero h1 {
@@ -235,10 +210,50 @@
             color: var(--dark);
         }
         
-        /* Services Section */
+        /* Scroll down indicator */
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--darker);
+            font-size: 0.9rem;
+            z-index: 20;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: bounce 2s infinite;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .scroll-down:hover {
+            opacity: 1;
+        }
+        
+        .scroll-down i {
+            margin-top: 5px;
+            font-size: 1.2rem;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-5px) translateX(-50%);
+            }
+        }
+        
+        /* Services Section - Updated to match hero gradient */
         .services {
             padding: 6rem 0;
-            background-color: white;
+            background: linear-gradient(to bottom, #d8ead8, white 20%);
+            position: relative;
+            z-index: 2;
         }
         
         .section-title {
@@ -288,6 +303,125 @@
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: var(--dark);
+        }
+        
+        /* Process Section - Simplified Line Design */
+        .process {
+            padding: 6rem 0;
+            background-color: var(--lightest);
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            position: relative;
+        }
+        
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 35px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary);
+            z-index: 1;
+        }
+        
+        .process-step {
+            text-align: center;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+        }
+        
+        .step-number {
+            width: 70px;
+            height: 70px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .process-step:hover .step-number {
+            background-color: var(--dark);
+            transform: scale(1.1);
+        }
+        
+        /* Portfolio Section */
+        .portfolio {
+            padding: 6rem 0;
+            background-color: white;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .portfolio-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            position: relative;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .portfolio-image {
+            width: 100%;
+            height: 250px;
+            background-color: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .portfolio-info {
+            padding: 1.5rem;
+            background-color: white;
+        }
+        
+        .portfolio-info h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Final CTA Section */
+        .final-cta {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, var(--dark), var(--darker));
+            color: white;
+            text-align: center;
+        }
+        
+        .final-cta h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .final-cta p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
         }
         
         /* Industries Section */
@@ -430,55 +564,59 @@
             }
             
             .services-grid,
-            .industries-grid {
+            .industries-grid,
+            .portfolio-grid {
                 grid-template-columns: 1fr;
             }
             
-            .floating-square {
-                width: 60px;
-                height: 60px;
+            .floating-icon {
+                width: 50px;
+                height: 50px;
             }
             
-            .floating-square i {
-                font-size: 1.5rem;
+            .floating-icon i {
+                font-size: 1.2rem;
+            }
+            
+            .floating-icons {
+                width: 95%;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+            }
+            
+            .process-steps::before {
+                display: none;
+            }
+            
+            .process-step {
+                margin-bottom: 3rem;
+            }
+            
+            .process-step:last-child {
+                margin-bottom: 0;
             }
         }
 
-        /* Your Utility Classes */
-        .flex-rows { display: flex; }
-        .flex-cols { display: flex; flex-direction: column; }
-        .flex-center-justify { justify-content: center; }
-        .relative { position: relative; }
-        .absolute { position: absolute; }
-        .fixed { position: fixed; }
-        .translate-center { transform: translateX(-50%) translateY(-50%); }
-        .abs-center { top:50%; left:50%; }
-        .abs-topleft { top:0; left:0; }
-        .abs-topcenter { top:0; left:50%; }
-        .abs-topright { top:0; right:0; }
-        .abs-centerleft { top:50%; left:0; }
-        .abs-centerright { top:50%; right:0; }
-        .abs-bottomleft { bottom:0; left:0; }
-        .abs-bottomcenter { bottom:0; left:50%; }
-        .abs-bottomright { bottom:0; right:0; }
-        .contain { object-fit: contain; }
-        .cover { object-fit: cover; }
-        /* Margin utilities */
-        .m5 { margin: 5px; } .m10 { margin: 10px; } .m15 { margin: 15px; } .m20 { margin: 20px; } .m25 { margin: 25px; } .m30 { margin: 30px; } .m40 { margin: 40px; } .m50 { margin: 50px; } .m100 { margin: 100px; } .m150 { margin: 150px; } .m200 { margin: 200px; }
-        .mtop5 { margin-top: 5px; } .mtop10 { margin-top: 10px; } .mtop15 { margin-top: 15px; } .mtop20 { margin-top: 20px; } .mtop25 { margin-top: 25px; } .mtop30 { margin-top: 30px; } .mtop40 { margin-top: 40px; } .mtop50 { margin-top: 50px; } .mtop100 { margin-top: 100px; } .mtop150 { margin-top: 150px; } .mtop200 { margin-top: 200px; }
-        .mbottom5 { margin-bottom: 5px; } .mbottom10 { margin-bottom: 10px; } .mbottom15 { margin-bottom: 15px; } .mbottom20 { margin-bottom: 20px; } .mbottom25 { margin-bottom: 25px; } .mbottom30 { margin-bottom: 30px; } .mbottom40 { margin-bottom: 40px; } .mbottom50 { margin-bottom: 50px; } .mbottom100 { margin-bottom: 100px; } .mbottom150 { margin-bottom: 150px; } .mbottom200 { margin-bottom: 200px; }
-        .mleft5 { margin-left: 5px; } .mleft10 { margin-left: 10px; } .mleft15 { margin-left: 15px; } .mleft20 { margin-left: 20px; } .mleft25 { margin-left: 25px; } .mleft30 { margin-left: 30px; } .mleft40 { margin-left: 40px; } .mleft50 { margin-left: 50px; } .mleft100 { margin-left: 100px; } .mleft150 { margin-left: 150px; } .mleft200 { margin-left: 200px; }
-        .mright5 { margin-right: 5px; } .mright10 { margin-right: 10px; } .mright15 { margin-right: 15px; } .mright20 { margin-right: 20px; } .mright25 { margin-right: 25px; } .mright30 { margin-right: 30px; } .mright40 { margin-right: 40px; } .mright50 { margin-right: 50px; } .mright100 { margin-right: 100px; } .mright150 { margin-right: 150px; } .mright200 { margin-right: 200px; }
-        /* Padding utilities */
-        .p5 { padding: 5px; } .p10 { padding: 10px; } .p15 { padding: 15px; } .p20 { padding: 20px; } .p25 { padding: 25px; } .p30 { padding: 30px; } .p40 { padding: 40px; } .p50 { padding: 50px; } .p100 { padding: 100px; } .p150 { padding: 150px; } .p200 { padding: 200px; }
-        .ptop5 { padding-top: 5px; } .ptop10 { padding-top: 10px; } .ptop15 { padding-top: 15px; } .ptop20 { padding-top: 20px; } .ptop25 { padding-top: 25px; } .ptop30 { padding-top: 30px; } .ptop40 { padding-top: 40px; } .ptop50 { padding-top: 50px; } .ptop100 { padding-top: 100px; } .ptop150 { padding-top: 150px; } .ptop200 { padding-top: 200px; }
-        .pbottom5 { padding-bottom: 5px; } .pbottom10 { padding-bottom: 10px; } .pbottom15 { padding-bottom: 15px; } .pbottom20 { padding-bottom: 20px; } .pbottom25 { padding-bottom: 25px; } .pbottom30 { padding-bottom: 30px; } .pbottom40 { padding-bottom: 40px; } .pbottom50 { padding-bottom: 50px; } .pbottom100 { padding-bottom: 100px; } .pbottom150 { padding-bottom: 150px; } .pbottom200 { padding-bottom: 200px; }
-        .pleft5 { padding-left: 5px; } .pleft10 { padding-left: 10px; } .pleft15 { padding-left: 15px; } .pleft20 { padding-left: 20px; } .pleft25 { padding-left: 25px; } .pleft30 { padding-left: 30px; } .pleft40 { padding-left: 40px; } .pleft50 { padding-left: 50px; } .pleft100 { padding-left: 100px; } .pleft150 { padding-left: 150px; } .pleft200 { padding-left: 200px; }
-        .pright5 { padding-right: 5px; } .pright10 { padding-right: 10px; } .pright15 { padding-right: 15px; } .pright20 { padding-right: 20px; } .pright25 { padding-right: 25px; } .pright30 { padding-right: 30px; } .pright40 { padding-right: 40px; } .pright50 { padding-right: 50px; } .pright100 { padding-right: 100px; } .pright150 { padding-right: 150px; } .pright200 { padding-right: 200px; }
-        /* Debug utilities */
-        .debug1 { background-color: red; }
-        .debug2 { background-color: green; }
-        .debug3 { background-color: blue; }
+        @media (max-width: 480px) {
+            .floating-icon {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .floating-icon i {
+                font-size: 1rem;
+            }
+            
+            .scroll-down {
+                font-size: 0.8rem;
+            }
+            
+            .scroll-down i {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -488,44 +626,54 @@
             <nav>
                 <div class="logo">
                     <i class="fas fa-tree" style="color: var(--dark); font-size: 2rem;"></i>
-                    <span class="logo-text">SPRUCE DEVELOPMENT</span>
+                    <span class="logo-text">SPRUCE DEV</span>
                 </div>
                 <ul class="nav-links">
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#industries">Industries</a></li>
+                    <li><a href="#process">Process</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#about">About</a></li>
+                    <li><a href="#industries">Industries</a></li>
                     <li><a href="#contact" class="cta-button">Get Estimate</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section with Mountains and Floating Elements -->
+    <!-- Hero Section with Updated Gradient and Background Image -->
     <section class="hero relative">
-        <div class="mountain-background"></div>
-        <div class="floating-elements">
-            <div class="floating-square">
-                <i class="fas fa-search"></i>
-            </div>
-            <div class="floating-square">
-                <i class="fab fa-facebook-f"></i>
-            </div>
-            <div class="floating-square">
-                <i class="fas fa-chart-line"></i>
-            </div>
-            <div class="floating-square">
-                <i class="fas fa-bullhorn"></i>
-            </div>
-            <div class="floating-square">
-                <i class="fas fa-ad"></i>
+        
+        <!-- Floating icons above the text -->
+        <div class="floating-icons-container">
+            <div class="floating-icons">
+                <div class="floating-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="floating-icon">
+                    <i class="fab fa-facebook-f"></i>
+                </div>
+                <div class="floating-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="floating-icon">
+                    <i class="fas fa-bullhorn"></i>
+                </div>
+                <div class="floating-icon">
+                    <i class="fas fa-ad"></i>
+                </div>
             </div>
         </div>
+        
         <div class="hero-content">
             <h1>Web Development for Tradesmen & Local Businesses</h1>
             <p>Grow your business with professional websites optimized for local SEO</p>
             <a href="#contact" class="cta-button">Get Started Today</a>
         </div>
+        
+        <!-- Scroll down indicator -->
+        <a href="#services" class="scroll-down">
+            <span>Scroll down</span>
+            <i class="fas fa-chevron-down"></i>
+        </a>
     </section>
 
     <!-- Services Section -->
@@ -556,6 +704,77 @@
                     </div>
                     <h3>E-Commerce</h3>
                     <p>Sell your products or services online with secure, easy-to-use e-commerce solutions tailored to your business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section - Simplified Line Design -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Process</h2>
+                <p>We follow a streamlined approach to deliver exceptional results</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Discovery</h3>
+                    <p>We learn about your business, goals, and target audience to create a tailored strategy.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Design</h3>
+                    <p>Our designers create mockups that align with your brand and business objectives.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Development</h3>
+                    <p>We build your website with clean code, ensuring fast loading and optimal performance.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Launch</h3>
+                    <p>We deploy your website and ensure everything is working perfectly before going live.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>Examples of Our Work</h2>
+                <p>See how we've helped businesses like yours succeed online</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Mountain View Plumbing</h3>
+                        <p>Complete website redesign with online booking system</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <i class="fas fa-hammer"></i>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Peak Construction</h3>
+                        <p>Portfolio website with project gallery and contact form</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Valley Electric</h3>
+                        <p>E-commerce site for electrical parts and services</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -601,6 +820,15 @@
         </div>
     </section>
 
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>We're Here For You</h2>
+            <p>Your success is our priority. Let us help you build an online presence that reflects the quality of your work and brings in more local customers.</p>
+            <a href="#contact" class="cta-button">Start Your Project Today</a>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta-section" id="contact">
         <div class="container">
@@ -624,9 +852,9 @@
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="#services">Services</a></li>
-                        <li><a href="#industries">Industries</a></li>
+                        <li><a href="#process">Our Process</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#industries">Industries</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -658,12 +886,25 @@
         // Simple parallax effect for floating elements
         document.addEventListener('scroll', function() {
             const scrolled = window.pageYOffset;
-            const parallaxElements = document.querySelectorAll('.floating-square');
+            const parallaxElements = document.querySelectorAll('.floating-icon');
             
             parallaxElements.forEach(function(element, index) {
                 const speed = 0.05 + (index * 0.02);
-                element.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * speed * 0.5}deg)`;
+                // Store the original transform from the animation
+                const animatedTransform = window.getComputedStyle(element).transform;
+                // Add parallax effect on top of the animation
+                element.style.transform = `${animatedTransform} translateY(${scrolled * speed}px)`;
             });
+        });
+
+        // Fade out scroll indicator when user scrolls
+        window.addEventListener('scroll', function() {
+            const scrollDown = document.querySelector('.scroll-down');
+            if (window.scrollY > 100) {
+                scrollDown.style.opacity = '0';
+            } else {
+                scrollDown.style.opacity = '0.8';
+            }
         });
     </script>
 </body>
