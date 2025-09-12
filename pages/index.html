@@ -3,9 +3,668 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpruceDev</title>
+    <title>Spruce Development | Web Solutions for Tradesmen</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --lightest: #f2fbf2;
+            --light: #9ac2a4;
+            --primary: #74ad8c;
+            --secondary: #7c877c;
+            --dark: #2a5642;
+            --darker: #21332b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--darker);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: var(--lightest);
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: rgba(242, 251, 242, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-left: 0.5rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--darker);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .cta-button {
+            background-color: var(--dark);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--darker);
+        }
+        
+        /* Hero Section with Mountains and Floating Elements */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(to bottom, #c6e2c6, #E0F6FF);
+        }
+        
+        .mountain-background {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30%;
+            background: 
+                /* Mountains */
+                linear-gradient(to bottom right, transparent 49%, var(--secondary) 50%),
+                linear-gradient(to bottom left, transparent 49%, var(--secondary) 50%),
+                linear-gradient(to bottom right, transparent 49%, var(--dark) 50%),
+                linear-gradient(to bottom left, transparent 49%, var(--dark) 50%),
+                linear-gradient(to bottom right, transparent 49%, var(--darker) 50%),
+                linear-gradient(to bottom left, transparent 49%, var(--darker) 50%);
+            background-size: 
+                20% 100%,
+                20% 100%,
+                15% 80%,
+                15% 80%,
+                10% 60%,
+                10% 60%;
+            background-position: 
+                0% 100%,
+                20% 100%,
+                40% 100%,
+                60% 100%,
+                80% 100%,
+                100% 100%;
+            background-repeat: no-repeat;
+            z-index: 1;
+        }
+        
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+        
+        .floating-square {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-square:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+            background-color: rgba(154, 194, 164, 0.8);
+        }
+        
+        .floating-square:nth-child(2) {
+            top: 30%;
+            right: 15%;
+            animation-delay: 1s;
+            background-color: rgba(116, 173, 140, 0.8);
+        }
+        
+        .floating-square:nth-child(3) {
+            top: 60%;
+            left: 20%;
+            animation-delay: 2s;
+            background-color: rgba(124, 135, 124, 0.8);
+        }
+        
+        .floating-square:nth-child(4) {
+            top: 50%;
+            right: 10%;
+            animation-delay: 3s;
+            background-color: rgba(42, 86, 66, 0.8);
+        }
+        
+        .floating-square:nth-child(5) {
+            top: 70%;
+            right: 30%;
+            animation-delay: 4s;
+            background-color: rgba(33, 51, 43, 0.8);
+        }
+        
+        .floating-square i {
+            font-size: 2rem;
+            color: white;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--darker);
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--dark);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 6rem 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            color: var(--secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: var(--lightest);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        /* Industries Section */
+        .industries {
+            padding: 6rem 0;
+            background-color: var(--dark);
+            color: white;
+        }
+        
+        .industries .section-title h2 {
+            color: white;
+        }
+        
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .industry-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        
+        .industry-card:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        
+        .industry-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--light);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 0;
+            background: linear-gradient(to right, var(--dark), var(--darker));
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--darker);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--light);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-column a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: var(--light);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--light);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .services-grid,
+            .industries-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .floating-square {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .floating-square i {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Your Utility Classes */
+        .flex-rows { display: flex; }
+        .flex-cols { display: flex; flex-direction: column; }
+        .flex-center-justify { justify-content: center; }
+        .relative { position: relative; }
+        .absolute { position: absolute; }
+        .fixed { position: fixed; }
+        .translate-center { transform: translateX(-50%) translateY(-50%); }
+        .abs-center { top:50%; left:50%; }
+        .abs-topleft { top:0; left:0; }
+        .abs-topcenter { top:0; left:50%; }
+        .abs-topright { top:0; right:0; }
+        .abs-centerleft { top:50%; left:0; }
+        .abs-centerright { top:50%; right:0; }
+        .abs-bottomleft { bottom:0; left:0; }
+        .abs-bottomcenter { bottom:0; left:50%; }
+        .abs-bottomright { bottom:0; right:0; }
+        .contain { object-fit: contain; }
+        .cover { object-fit: cover; }
+        /* Margin utilities */
+        .m5 { margin: 5px; } .m10 { margin: 10px; } .m15 { margin: 15px; } .m20 { margin: 20px; } .m25 { margin: 25px; } .m30 { margin: 30px; } .m40 { margin: 40px; } .m50 { margin: 50px; } .m100 { margin: 100px; } .m150 { margin: 150px; } .m200 { margin: 200px; }
+        .mtop5 { margin-top: 5px; } .mtop10 { margin-top: 10px; } .mtop15 { margin-top: 15px; } .mtop20 { margin-top: 20px; } .mtop25 { margin-top: 25px; } .mtop30 { margin-top: 30px; } .mtop40 { margin-top: 40px; } .mtop50 { margin-top: 50px; } .mtop100 { margin-top: 100px; } .mtop150 { margin-top: 150px; } .mtop200 { margin-top: 200px; }
+        .mbottom5 { margin-bottom: 5px; } .mbottom10 { margin-bottom: 10px; } .mbottom15 { margin-bottom: 15px; } .mbottom20 { margin-bottom: 20px; } .mbottom25 { margin-bottom: 25px; } .mbottom30 { margin-bottom: 30px; } .mbottom40 { margin-bottom: 40px; } .mbottom50 { margin-bottom: 50px; } .mbottom100 { margin-bottom: 100px; } .mbottom150 { margin-bottom: 150px; } .mbottom200 { margin-bottom: 200px; }
+        .mleft5 { margin-left: 5px; } .mleft10 { margin-left: 10px; } .mleft15 { margin-left: 15px; } .mleft20 { margin-left: 20px; } .mleft25 { margin-left: 25px; } .mleft30 { margin-left: 30px; } .mleft40 { margin-left: 40px; } .mleft50 { margin-left: 50px; } .mleft100 { margin-left: 100px; } .mleft150 { margin-left: 150px; } .mleft200 { margin-left: 200px; }
+        .mright5 { margin-right: 5px; } .mright10 { margin-right: 10px; } .mright15 { margin-right: 15px; } .mright20 { margin-right: 20px; } .mright25 { margin-right: 25px; } .mright30 { margin-right: 30px; } .mright40 { margin-right: 40px; } .mright50 { margin-right: 50px; } .mright100 { margin-right: 100px; } .mright150 { margin-right: 150px; } .mright200 { margin-right: 200px; }
+        /* Padding utilities */
+        .p5 { padding: 5px; } .p10 { padding: 10px; } .p15 { padding: 15px; } .p20 { padding: 20px; } .p25 { padding: 25px; } .p30 { padding: 30px; } .p40 { padding: 40px; } .p50 { padding: 50px; } .p100 { padding: 100px; } .p150 { padding: 150px; } .p200 { padding: 200px; }
+        .ptop5 { padding-top: 5px; } .ptop10 { padding-top: 10px; } .ptop15 { padding-top: 15px; } .ptop20 { padding-top: 20px; } .ptop25 { padding-top: 25px; } .ptop30 { padding-top: 30px; } .ptop40 { padding-top: 40px; } .ptop50 { padding-top: 50px; } .ptop100 { padding-top: 100px; } .ptop150 { padding-top: 150px; } .ptop200 { padding-top: 200px; }
+        .pbottom5 { padding-bottom: 5px; } .pbottom10 { padding-bottom: 10px; } .pbottom15 { padding-bottom: 15px; } .pbottom20 { padding-bottom: 20px; } .pbottom25 { padding-bottom: 25px; } .pbottom30 { padding-bottom: 30px; } .pbottom40 { padding-bottom: 40px; } .pbottom50 { padding-bottom: 50px; } .pbottom100 { padding-bottom: 100px; } .pbottom150 { padding-bottom: 150px; } .pbottom200 { padding-bottom: 200px; }
+        .pleft5 { padding-left: 5px; } .pleft10 { padding-left: 10px; } .pleft15 { padding-left: 15px; } .pleft20 { padding-left: 20px; } .pleft25 { padding-left: 25px; } .pleft30 { padding-left: 30px; } .pleft40 { padding-left: 40px; } .pleft50 { padding-left: 50px; } .pleft100 { padding-left: 100px; } .pleft150 { padding-left: 150px; } .pleft200 { padding-left: 200px; }
+        .pright5 { padding-right: 5px; } .pright10 { padding-right: 10px; } .pright15 { padding-right: 15px; } .pright20 { padding-right: 20px; } .pright25 { padding-right: 25px; } .pright30 { padding-right: 30px; } .pright40 { padding-right: 40px; } .pright50 { padding-right: 50px; } .pright100 { padding-right: 100px; } .pright150 { padding-right: 150px; } .pright200 { padding-right: 200px; }
+        /* Debug utilities */
+        .debug1 { background-color: red; }
+        .debug2 { background-color: green; }
+        .debug3 { background-color: blue; }
+    </style>
 </head>
 <body>
-    
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-tree" style="color: var(--dark); font-size: 2rem;"></i>
+                    <span class="logo-text">SPRUCE DEVELOPMENT</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#industries">Industries</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact" class="cta-button">Get Estimate</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section with Mountains and Floating Elements -->
+    <section class="hero relative">
+        <div class="mountain-background"></div>
+        <div class="floating-elements">
+            <div class="floating-square">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="floating-square">
+                <i class="fab fa-facebook-f"></i>
+            </div>
+            <div class="floating-square">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="floating-square">
+                <i class="fas fa-bullhorn"></i>
+            </div>
+            <div class="floating-square">
+                <i class="fas fa-ad"></i>
+            </div>
+        </div>
+        <div class="hero-content">
+            <h1>Web Development for Tradesmen & Local Businesses</h1>
+            <p>Grow your business with professional websites optimized for local SEO</p>
+            <a href="#contact" class="cta-button">Get Started Today</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>We specialize in creating digital solutions that help local businesses thrive online</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Custom websites designed to convert visitors into customers, with a focus on user experience and mobile responsiveness.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Local SEO</h3>
+                    <p>Get found by customers in your area with our specialized local search engine optimization strategies.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>E-Commerce</h3>
+                    <p>Sell your products or services online with secure, easy-to-use e-commerce solutions tailored to your business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section class="industries" id="industries">
+        <div class="container">
+            <div class="section-title">
+                <h2>Industries We Serve</h2>
+                <p>We have experience working with various trades and local businesses</p>
+            </div>
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>HVAC Services</h3>
+                    <p>Websites that help HVAC companies attract local customers and showcase their services.</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-faucet"></i>
+                    </div>
+                    <h3>Plumbing</h3>
+                    <p>Emergency plumbing websites designed to quickly connect you with customers in need.</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-hammer"></i>
+                    </div>
+                    <h3>Contractors</h3>
+                    <p>Showcase your projects and build trust with potential clients through professional web presence.</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Electricians</h3>
+                    <p>Web solutions that help electricians stand out in local search results and attract more business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Grow Your Business?</h2>
+                <p>Contact us today for a free consultation and estimate. Let's discuss how we can help your business thrive online.</p>
+                <a href="#contact" class="cta-button">Get Your Free Estimate</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Spruce Development</h3>
+                    <p>Helping local businesses and tradesmen establish a strong online presence and attract more customers.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#industries">Industries</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@sprucedev.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Main St, Anytown USA</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Spruce Development. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple parallax effect for floating elements
+        document.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.floating-square');
+            
+            parallaxElements.forEach(function(element, index) {
+                const speed = 0.05 + (index * 0.02);
+                element.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * speed * 0.5}deg)`;
+            });
+        });
+    </script>
 </body>
 </html>
