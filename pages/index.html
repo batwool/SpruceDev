@@ -12,7 +12,7 @@
     <!-- FONTS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link 
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500&display=swap" 
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" 
         rel="stylesheet"
     >
 </head>
@@ -22,7 +22,7 @@
         <div class="container">
             <nav>
                 <div class="logo">
-                    <i class="fas fa-tree" style="color: var(--dark); font-size: 2rem;"></i>
+                    <i class="fas fa-tree"></i>
                     <span class="logo-text">SPRUCE DEV</span>
                 </div>
                 <ul class="nav-links">
@@ -36,8 +36,9 @@
         </div>
     </header>
 
-    <!-- Hero Section with Updated Gradient and Background Image -->
+    <!-- Hero Section with Blur and Parallax Effect -->
     <section class="hero relative">
+        <div class="hero-bg" id="hero-bg"></div>
         
         <!-- Floating icons above the text -->
         <div class="floating-icons-container">
@@ -73,7 +74,7 @@
         </a>
     </section>
 
-    <!-- Services Section -->
+    <!-- Services Section with Enhanced Cards -->
     <section class="services" id="services">
         <div class="container">
             <div class="section-title">
@@ -82,25 +83,82 @@
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-laptop-code"></i>
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                            <div class="service-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h3>Web Development</h3>
+                            <p>Custom websites designed to convert visitors into customers, with a focus on user experience and mobile responsiveness.</p>
+                            <p class="flip-instruction">Hover to see details</p>
+                        </div>
+                        <div class="service-card-back">
+                            <div class="service-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h3>Web Development</h3>
+                            <ul class="service-features">
+                                <li>Fully responsive design</li>
+                                <li>Fast loading times</li>
+                                <li>Mobile-first approach</li>
+                                <li>Custom functionality</li>
+                                <li>Ongoing maintenance</li>
+                            </ul>
+                            <a href="#contact" class="service-cta">Get Started</a>
+                        </div>
                     </div>
-                    <h3>Web Development</h3>
-                    <p>Custom websites designed to convert visitors into customers, with a focus on user experience and mobile responsiveness.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-search"></i>
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                            <div class="service-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h3>Local SEO</h3>
+                            <p>Get found by customers in your area with our specialized local search engine optimization strategies.</p>
+                            <p class="flip-instruction">Hover to see details</p>
+                        </div>
+                        <div class="service-card-back">
+                            <div class="service-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h3>Local SEO</h3>
+                            <ul class="service-features">
+                                <li>Google My Business optimization</li>
+                                <li>Local keyword research</li>
+                                <li>Citation building</li>
+                                <li>Review management</li>
+                                <li>Local content strategy</li>
+                            </ul>
+                            <a href="#contact" class="service-cta">Boost Visibility</a>
+                        </div>
                     </div>
-                    <h3>Local SEO</h3>
-                    <p>Get found by customers in your area with our specialized local search engine optimization strategies.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-shopping-cart"></i>
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                            <div class="service-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <h3>E-Commerce</h3>
+                            <p>Sell your products or services online with secure, easy-to-use e-commerce solutions tailored to your business.</p>
+                            <p class="flip-instruction">Hover to see details</p>
+                        </div>
+                        <div class="service-card-back">
+                            <div class="service-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <h3>E-Commerce</h3>
+                            <ul class="service-features">
+                                <li>Secure payment processing</li>
+                                <li>Inventory management</li>
+                                <li>Customer account systems</li>
+                                <li>Order tracking</li>
+                                <li>Mobile shopping optimized</li>
+                            </ul>
+                            <a href="#contact" class="service-cta">Start Selling</a>
+                        </div>
                     </div>
-                    <h3>E-Commerce</h3>
-                    <p>Sell your products or services online with secure, easy-to-use e-commerce solutions tailored to your business.</p>
                 </div>
             </div>
         </div>
@@ -217,15 +275,6 @@
         </div>
     </section>
 
-    <!-- Final CTA Section -->
-    <section class="final-cta">
-        <div class="container">
-            <h2>We're Here For You</h2>
-            <p>Your success is our priority. Let us help you build an online presence that reflects the quality of your work and brings in more local customers.</p>
-            <a href="#contact" class="cta-button">Start Your Project Today</a>
-        </div>
-    </section>
-
     <!-- CTA Section -->
     <section class="cta-section" id="contact">
         <div class="container">
@@ -274,12 +323,24 @@
                 </div>
             </div>
             <div class="copyright">
+                <svg class="tree-icon" viewBox="0 0 24 24">
+                    <path d="M12,22V18C12,18 8,16 8,11C8,7 12,4 12,4C12,4 16,7 16,11C16,16 12,18 12,18V22C12,22 16,20 16,16H14C14,18 12,20 12,20C12,20 10,18 10,16H8C8,20 12,22 12,22Z" />
+                </svg>
                 <p>&copy; 2023 Spruce Development. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
+        // Parallax effect for hero background
+        document.addEventListener('mousemove', function(e) {
+            const heroBg = document.getElementById('hero-bg');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            heroBg.style.transform = `scale(1.1) translate(${x * 20}px, ${y * 20}px)`;
+        });
+
         // Simple parallax effect for floating elements
         document.addEventListener('scroll', function() {
             const scrolled = window.pageYOffset;
