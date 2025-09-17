@@ -29,6 +29,12 @@ h1, h2, h3, h4, h5 {
     line-height: 1.3;
 }
 
+
+/* CARD STYLES ----- */
+
+
+
+
 /* components */
 .container {
     width: 90%;
@@ -92,72 +98,6 @@ h1, h2, h3, h4, h5 {
     transition: transform 0.1s ease-out;
 }
 
-.floating-icons-container {
-    position: absolute;
-    top: 25%;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    z-index: 15;
-    pointer-events: none;
-}
-
-.floating-icons {
-    display: flex;
-    justify-content: space-around;
-    width: 80%;
-    max-width: 800px;
-}
-
-.floating-icon {
-    width: 60px;
-    height: 60px;
-    background: rgba(255, 255, 255, 0.85);
-    border-radius: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    animation: float 6s ease-in-out infinite;
-}
-
-.floating-icon:nth-child(1) {
-    animation-delay: 0s;
-    background-color: rgba(154, 194, 164, 0.9);
-}
-
-.floating-icon:nth-child(2) {
-    animation-delay: 1s;
-    background-color: rgba(116, 173, 140, 0.9);
-}
-
-.floating-icon:nth-child(3) {
-    animation-delay: 2s;
-    background-color: rgba(124, 135, 124, 0.9);
-}
-
-.floating-icon:nth-child(4) {
-    animation-delay: 3s;
-    background-color: rgba(42, 86, 66, 0.9);
-}
-
-.floating-icon:nth-child(5) {
-    animation-delay: 4s;
-    background-color: rgba(33, 51, 43, 0.9);
-}
-
-.floating-icon i {
-    font-size: 1.8rem;
-    color: white;
-}
-
-@keyframes float {
-    0% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-15px) rotate(3deg); }
-    100% { transform: translateY(0) rotate(0deg); }
-}
-
 .hero-content {
     position: relative;
     z-index: 10;
@@ -178,49 +118,6 @@ h1, h2, h3, h4, h5 {
     font-size: 1.5rem;
     margin-bottom: 2rem;
     color: var(--dark);
-}
-
-/* Scroll down indicator */
-.scroll-down {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--darker);
-    font-size: 0.9rem;
-    z-index: 20;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    animation: bounce 2s infinite;
-    opacity: 0.8;
-    transition: opacity 0.3s;
-    text-decoration: none;
-}
-
-.scroll-down:hover {
-    opacity: 1;
-}
-
-.scroll-down span {
-    display: none;
-}
-
-.scroll-down i {
-    margin-top: 5px;
-    font-size: 1.8rem;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0) translateX(-50%);
-    }
-    40% {
-        transform: translateY(-10px) translateX(-50%);
-    }
-    60% {
-        transform: translateY(-5px) translateX(-50%);
-    }
 }
 
 /* Services Section - Enhanced with Flip Cards */
@@ -270,11 +167,7 @@ h1, h2, h3, h4, h5 {
     border-radius: 10px;
 }
 
-.service-card:hover .service-card-inner {
-    transform: rotateY(180deg);
-}
-
-.service-card-front, .service-card-back {
+.service-card-front {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -293,60 +186,15 @@ h1, h2, h3, h4, h5 {
     color: var(--dark);
 }
 
-.service-card-back {
-    background-color: var(--primary);
-    color: white;
-    transform: rotateY(180deg);
-}
-
 .service-icon {
     font-size: 3rem;
     margin-bottom: 1.5rem;
     color: var(--dark);
 }
 
-.service-card-back .service-icon {
-    color: white;
-}
-
 .service-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-}
-
-.service-features {
-    list-style: none;
-    text-align: left;
-    margin-top: 1.5rem;
-}
-
-.service-features li {
-    margin-bottom: 0.8rem;
-    position: relative;
-    padding-left: 1.5rem;
-}
-
-.service-features li:before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: var(--light);
-}
-
-.service-cta {
-    margin-top: 2rem;
-    background: white;
-    color: var(--dark);
-    padding: 0.8rem 1.5rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s;
-}
-
-.service-cta:hover {
-    background: var(--lightest);
-    transform: translateY(-3px);
 }
 
 /* Process Section - Simplified Line Design */
@@ -628,7 +476,6 @@ footer {
     justify-content: center;
     font-size: 1.8rem;
     font-weight: bold;
-    margin-right: 2rem;
 }
 
 .step-content {
