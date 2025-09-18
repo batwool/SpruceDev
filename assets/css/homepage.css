@@ -108,3 +108,121 @@
         transform: translateY(-5px) translateX(-50%);
     }
 }
+
+/* PROCESS STEPS ----- */
+
+.process-steps {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    position: relative;
+}
+
+.process-steps::before {
+    content: '';
+    position: absolute;
+    top: 35px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary);
+    z-index: 1;
+}
+
+.process-step {
+    text-align: center;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 2;
+    flex: 1;
+}
+
+.step-number {
+    width: 70px;
+    height: 70px;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.process-step:hover .step-number {
+    background-color: var(--dark);
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {        
+    .icon-card {
+        height: 350px;
+    }
+    
+    .floating-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .floating-icon i {
+        font-size: 1.2rem;
+    }
+    
+    .floating-icons {
+        width: 95%;
+    }
+    
+    .process-steps {
+        flex-direction: column;
+    }
+    
+    .process-steps::before {
+        display: none;
+    }
+    
+    .process-step {
+        margin-bottom: 3rem;
+    }
+    
+    .process-step:last-child {
+        margin-bottom: 0;
+    }
+
+    .step {
+        flex-direction: column;
+    }
+    
+    .step-number {
+        margin-right: 0;
+        margin-bottom: 1.5rem;
+    }
+    
+    .card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .floating-icon i {
+        font-size: 1rem;
+    }
+    
+    .scroll-down {
+        font-size: 0.8rem;
+    }
+    
+    .scroll-down i {
+        font-size: 1.5rem;
+    }
+}
