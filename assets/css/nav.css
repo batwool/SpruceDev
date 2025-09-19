@@ -20,11 +20,16 @@ nav {
     cursor: pointer;
 }
 
-.logo-text {
-    font-size: 1.8rem;
-    font-weight: 600;
+.logo i {
+    font-size: 2rem; /* Increased from default */
     color: var(--dark);
-    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.logo-text {
+    font-size: 2rem; /* Increased from 1.8rem */
+    font-weight: 700; /* Made bolder */
+    color: var(--dark);
 }
 
 .nav-links {
