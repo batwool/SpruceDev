@@ -6,9 +6,9 @@
     <title>Spruce Development | Web Solutions for Tradesmen</title>
 
     <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/homepage.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/nav.css">
-     <link rel="stylesheet" type="text/css" href="../assets/css/homepage.css">
     
 
     <!-- FONTS -->
@@ -89,8 +89,8 @@
     </header>
 
     <!-- Hero Section with Blur and Parallax Effect -->
-    <section class="hero relative">
-        <div class="hero-bg" id="hero-bg"></div>
+    <section class="hero-tall">
+        <div class="main-hero-bg" id="hero-bg"></div>
         
         <!-- Floating icons above the text -->
         <div class="floating-icons-container">
@@ -114,8 +114,8 @@
         </div>
         
         <div class="hero-content">
-            <h1>Web Development for Tradesmen & Local Businesses</h1>
-            <p>Grow your business with professional websites optimized for local SEO</p>
+            <h1 class="hero-title">Web Development for Tradesmen & Local Businesses</h1>
+            <p class="hero-subtitle">Grow your business with professional websites optimized for local SEO</p>
             <a href="#contact" class="cta-button">Get Started Today</a>
         </div>
         
@@ -127,55 +127,39 @@
     </section>
 
     <!-- Services Section with Enhanced Cards -->
-    <section class="services" id="services">
+    <section class="light-section" id="services">
         <div class="container">
             <div class="section-title">
                 <h2>Our Services</h2>
                 <p>We specialize in creating digital solutions that help small businesses thrive online</p>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-card-inner">
-                        <div class="service-card-front">
-                            <div class="service-icon">
-                                <i class="fas fa-laptop-code"></i>
-                            </div>
-                            <h3>Web Development</h3>
-                            <p>Custom websites designed to convert visitors into customers, with a focus on user experience and mobile responsiveness.</p>
-                            <p class="flip-instruction">Hover to see details</p>
-                        </div>
-                    </div>
+            <div class="grid-min300">
+                <div class="light-icon-card-center">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3 class="mbottom25">Web Development</h3>
+                    <p>Custom websites designed to convert visitors into customers, with a focus on user experience and mobile responsiveness.</p>
+                    <p class="flip-instruction">Hover to see details</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-card-inner">
-                        <div class="service-card-front">
-                            <div class="service-icon">
-                                <i class="fas fa-search"></i>
-                            </div>
-                            <h3>Local SEO</h3>
-                            <p>Get found by customers in your area with our specialized local search engine optimization strategies.</p>
-                            <p class="flip-instruction">Hover to see details</p>
-                        </div>
-                    </div>
+
+                <div class="light-icon-card-center">
+                    <i class="fas fa-search"></i>
+                    <h3 class="mbottom25">Local SEO</h3>
+                    <p>Get found by customers in your area with our specialized local search engine optimization strategies.</p>
+                    <p class="flip-instruction">Hover to see details</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-card-inner">
-                        <div class="service-card-front">
-                            <div class="service-icon">
-                                <i class="fas fa-shopping-cart"></i>
-                            </div>
-                            <h3>E-Commerce</h3>
-                            <p>Sell your products or services online with secure, easy-to-use e-commerce solutions tailored to your business.</p>
-                            <p class="flip-instruction">Hover to see details</p>
-                        </div>
-                    </div>
+
+                <div class="light-icon-card-center">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h3 class="mbottom25">E-Commerce</h3>
+                    <p>Sell your products or services online with secure, easy-to-use e-commerce solutions tailored to your business.</p>
+                    <p class="flip-instruction">Hover to see details</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Process Section - Simplified Line Design -->
-    <section class="process" id="process">
+    <section class="light-section-two" id="process">
         <div class="container">
             <div class="section-title">
                 <h2>Our Process</h2>
@@ -207,36 +191,30 @@
     </section>
 
     <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio">
+    <section class="light-section" id="portfolio">
         <div class="container">
             <div class="section-title">
                 <h2>Examples of Our Work</h2>
                 <p>See how we've helped businesses like yours succeed online</p>
             </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <div class="portfolio-info">
+            <div class="grid-min300">
+                <div class="light-icon-card raise-hover-effect">
+                    <i class="fas fa-tools"></i>
+                    <div>
                         <h3>Mountain View Plumbing</h3>
                         <p>Complete website redesign with online booking system</p>
                     </div>
                 </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <i class="fas fa-hammer"></i>
-                    </div>
-                    <div class="portfolio-info">
+                <div class="light-icon-card raise-hover-effect">
+                    <i class="fas fa-hammer"></i>
+                    <div>
                         <h3>Peak Construction</h3>
                         <p>Portfolio website with project gallery and contact form</p>
                     </div>
                 </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <div class="portfolio-info">
+                <div class="light-icon-card raise-hover-effect">
+                    <i class="fas fa-bolt"></i>
+                    <div>
                         <h3>Valley Electric</h3>
                         <p>E-commerce site for electrical parts and services</p>
                     </div>
@@ -246,38 +224,30 @@
     </section>
 
     <!-- Industries Section -->
-    <section class="industries" id="industries">
+    <section class="dark-section" id="industries">
         <div class="container">
             <div class="section-title">
                 <h2>Industries We Serve</h2>
                 <p>We have experience working with various trades and small businesses</p>
             </div>
-            <div class="industries-grid">
-                <div class="industry-card">
-                    <div class="industry-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
+            <div class="grid-min250">
+                <div class="dark-icon-card-center raise-hover-effect">
+                    <i class="fas fa-tools"></i>
                     <h3>HVAC Services</h3>
                     <p>Websites that help HVAC companies attract local customers and showcase their services.</p>
                 </div>
-                <div class="industry-card">
-                    <div class="industry-icon">
-                        <i class="fas fa-faucet"></i>
-                    </div>
+                <div class="dark-icon-card-center raise-hover-effect">
+                    <i class="fas fa-faucet"></i>
                     <h3>Plumbing</h3>
                     <p>Emergency plumbing websites designed to quickly connect you with customers in need.</p>
                 </div>
-                <div class="industry-card">
-                    <div class="industry-icon">
-                        <i class="fas fa-hammer"></i>
-                    </div>
+                <div class="dark-icon-card-center raise-hover-effect">
+                    <i class="fas fa-hammer"></i>
                     <h3>Contractors</h3>
                     <p>Showcase your projects and build trust with potential clients through professional web presence.</p>
                 </div>
-                <div class="industry-card">
-                    <div class="industry-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
+                <div class="dark-icon-card-center raise-hover-effect">
+                    <i class="fas fa-bolt"></i>
                     <h3>Electricians</h3>
                     <p>Web solutions that help electricians stand out in local search results and attract more business.</p>
                 </div>
@@ -286,12 +256,12 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section" id="contact">
+    <section class="dark-gradient-section" id="contact">
         <div class="container">
-            <div class="cta-content">
+            <div class="section-title">
                 <h2>Ready to Grow Your Business?</h2>
                 <p>Contact us today for a free consultation and estimate. Let's discuss how we can help your business thrive online.</p>
-                <a href="#contact" class="cta-button">Get Your Free Estimate</a>
+                <a href="#contact" class="cta-button mtop50 inline-block">Get Your Free Estimate</a>
             </div>
         </div>
     </section>
