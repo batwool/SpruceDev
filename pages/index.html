@@ -20,7 +20,58 @@
     >
 
     <!-- SCRIPTS -->
-    
+    <script src="../assets/scripts/typewriter.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // add typewriter effect
+            type(
+                document.getElementById('typewriter'), 
+                [
+                    "Plumbers. ",
+                    "Electricians. ",
+                    "Builders. ",
+                    "HVAC Companies. ",
+                    "Local Shops. "
+                ]
+            );
+        });
+
+        // add parallax effects -----
+
+        // Parallax effect for hero background
+        document.addEventListener('mousemove', function (e) {
+            const heroBg = document.getElementById('hero-bg');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+
+            heroBg.style.transform = `scale(1.1) translate(${x * 20}px, ${y * 20}px)`;
+        });
+
+        // Simple parallax effect for floating elements
+        document.addEventListener('scroll', function () {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.floating-icon');
+
+            parallaxElements.forEach(function (element, index) {
+                const speed = 0.05 + (index * 0.02);
+                // Store the original transform from the animation
+                const animatedTransform = window.getComputedStyle(element).transform;
+                // Add parallax effect on top of the animation
+                element.style.transform = `${animatedTransform} translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // Fade out scroll indicator when user scrolls
+        window.addEventListener('scroll', function () {
+            const scrollDown = document.querySelector('.scroll-down');
+            if (window.scrollY > 100) {
+                scrollDown.style.opacity = '0';
+            } else {
+                scrollDown.style.opacity = '0.8';
+            }
+        });
+    </script>
 </head>
 <body>
     <!-- Header & Navigation -->
@@ -115,16 +166,16 @@
         </div>
         
         <div class="hero-content">
-           <h1 class="hero-title">
-  We Build Websites for <span id="typewriter"></span>
-</h1>
-             <p class="hero-subtitle">
-            Grow your business with professional websites optimized for local SEO
-             </p>
-        <div class="cta-buttons">
-            <a href="#contact" class="cta-button">Get Started Today</a>
-            <a href="#portfolio" class="cta-button secondary-cta">See Our Work</a>
-        </div>
+            <h1 class="hero-title">
+                We Build Websites for <span id="typewriter"></span>
+            </h1>
+            <p class="hero-subtitle">
+                Grow your business with professional websites optimized for local SEO
+            </p>
+            <div class="flex-rows flex-center-justify">
+                <a href="#contact" class="cta-button mright10">Get Started Today</a>
+                <a href="#portfolio" class="cta-button secondary-cta-button">See Our Work</a>
+            </div>
         </div>
 
         
@@ -135,22 +186,21 @@
         </a>
     </section>
 
-
     <!-- Services Cards Section -->
-    <section class="light-section services-cards-section">
+    <section class="light-section">
         <div class="container">
             <div class="section-title">
                 <h2>Our Comprehensive Services</h2>
                 <p>Everything you need to establish and grow your online presence</p>
             </div>
-            <div class="services-cards-grid">
+            <div class="grid-min300">
                 <div class="service-card">
                     <div class="service-card-icon">
                         <i class="fas fa-browser"></i>
                     </div>
                     <h3>Custom Websites</h3>
                     <p>Improve visibility, boost traffic, get more leads & increase sales with a custom website built just for you</p>
-                    <a href="#contact" class="service-card-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <a href="#contact">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="service-card">
@@ -159,7 +209,7 @@
                     </div>
                     <h3>Paid Advertising</h3>
                     <p>Market to potential customers in your territory with targeted advertising campaigns</p>
-                    <a href="#contact" class="service-card-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <a href="#contact">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="service-card">
@@ -168,7 +218,7 @@
                     </div>
                     <h3>Google Business</h3>
                     <p>Complete management, posting & monitoring of your Google Business Profile</p>
-                    <a href="#contact" class="service-card-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <a href="#contact">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="service-card">
@@ -177,7 +227,7 @@
                     </div>
                     <h3>Google LSA</h3>
                     <p>Professional strategies and management of your Google Local Services Ads</p>
-                    <a href="#contact" class="service-card-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <a href="#contact">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="service-card">
@@ -186,7 +236,7 @@
                     </div>
                     <h3>SEO Services</h3>
                     <p>On-Page, Off-Page, and software-driven SEO solutions for local visibility</p>
-                    <a href="#contact" class="service-card-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <a href="#contact">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="service-card">
@@ -195,7 +245,7 @@
                     </div>
                     <h3>Social Media</h3>
                     <p>Social media assets, advertising, banners, and images to boost your online presence</p>
-                    <a href="#contact" class="service-card-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <a href="#contact">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -354,83 +404,5 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        // Parallax effect for hero background
-        document.addEventListener('mousemove', function(e) {
-            const heroBg = document.getElementById('hero-bg');
-            const x = e.clientX / window.innerWidth;
-            const y = e.clientY / window.innerHeight;
-            
-            heroBg.style.transform = `scale(1.1) translate(${x * 20}px, ${y * 20}px)`;
-        });
-
-        // Simple parallax effect for floating elements
-        document.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const parallaxElements = document.querySelectorAll('.floating-icon');
-            
-            parallaxElements.forEach(function(element, index) {
-                const speed = 0.05 + (index * 0.02);
-                // Store the original transform from the animation
-                const animatedTransform = window.getComputedStyle(element).transform;
-                // Add parallax effect on top of the animation
-                element.style.transform = `${animatedTransform} translateY(${scrolled * speed}px)`;
-            });
-        });
-
-        // Fade out scroll indicator when user scrolls
-        window.addEventListener('scroll', function() {
-            const scrollDown = document.querySelector('.scroll-down');
-            if (window.scrollY > 100) {
-                scrollDown.style.opacity = '0';
-            } else {
-                scrollDown.style.opacity = '0.8';
-            }
-        });
-    </script>
-<script>
-  const typewriterText = [
-    "Plumbers. ",
-    "Electricians. ",
-    "Builders. ",
-    "HVAC Companies. ",
-    "Local Shops. "
-  ];
-  
-  let i = 0;
-  let j = 0;
-  let currentText = "";
-  let isDeleting = false;
-  const speed = 100; // typing speed
-  const wait = 2000; // pause before deleting
-  
-  function type() {
-    const typewriter = document.getElementById("typewriter");
-    if (!typewriter) return;
-
-    currentText = typewriterText[i];
-    if (isDeleting) {
-      typewriter.innerHTML = currentText.substring(0, j--);
-    } else {
-      typewriter.innerHTML = currentText.substring(0, j++);
-    }
-
-    if (!isDeleting && j === currentText.length) {
-      isDeleting = true;
-      setTimeout(type, wait);
-      return;
-    }
-
-    if (isDeleting && j === 0) {
-      isDeleting = false;
-      i = (i + 1) % typewriterText.length;
-    }
-
-    setTimeout(type, isDeleting ? speed / 2 : speed);
-  }
-
-  document.addEventListener("DOMContentLoaded", type);
-</script>
 </body>
 </html>

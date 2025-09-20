@@ -8,6 +8,7 @@
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/nav.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/footer.css">
 
     <!-- FONTS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -218,54 +219,6 @@
         </div>
     </section>
 
-    <!-- SEO Focus Section -->
-    <section class="seo-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our SEO Approach</h2>
-                <p>Comprehensive search engine optimization to maximize your online visibility</p>
-            </div>
-            
-            <div class="industries-grid">
-                <div class="industry-card icon-card">
-                    <i class="fas fa-search"></i>
-                    <h3>Keyword Research</h3>
-                    <p>We identify the most valuable keywords for your business that will drive qualified traffic to your website.</p>
-                </div>
-                
-                <div class="industry-card icon-card">
-                    <i class="fas fa-code"></i>
-                    <h3>Technical SEO</h3>
-                    <p>We optimize website architecture, speed, mobile-friendliness, and other technical factors that impact rankings.</p>
-                </div>
-                
-                <div class="industry-card icon-card">
-                    <i class="fas fa-edit"></i>
-                    <h3>Content Optimization</h3>
-                    <p>We create and optimize content that resonates with both your audience and search engines.</p>
-                </div>
-                
-                <div class="industry-card icon-card">
-                    <i class="fas fa-link"></i>
-                    <h3>Link Building</h3>
-                    <p>We develop strategies to acquire high-quality backlinks from authoritative websites in your industry.</p>
-                </div>
-                
-                <div class="industry-card icon-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Performance Tracking</h3>
-                    <p>We monitor rankings, traffic, and conversions to continuously refine our SEO strategy.</p>
-                </div>
-                
-                <div class="industry-card icon-card">
-                    <i class="fas fa-sync-alt"></i>
-                    <h3>Ongoing Optimization</h3>
-                    <p>SEO is not a one-time effort. We continuously adapt to algorithm changes and new opportunities.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Process CTA Section -->
     <section class="cta-section process-cta">
         <div class="container">
@@ -357,6 +310,47 @@
     padding: 4rem 0;
     background: linear-gradient(to right, var(--dark), var(--darker));
     color: white;
+}
+
+/* Step component */
+
+.step-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.step {
+    display: flex;
+    margin-bottom: 5rem;
+    align-items: flex-start;
+}
+
+.step:last-child {
+    margin-bottom: 0;
+}
+
+.step-number {
+    flex-shrink: 0;
+    width: 70px;
+    height: 70px;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.step-content {
+    flex-grow: 1;
+}
+
+.step-content h3 {
+    color: var(--dark);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
 }
 </style>
 </html>
