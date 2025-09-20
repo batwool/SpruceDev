@@ -42,6 +42,74 @@ h1, h2, h3, h4, h5 {
     gap: 2rem;
 }
 
+/* Services Cards Section */
+.services-cards-section {
+    padding: 6rem 0;
+    background-color: white;
+}
+
+.services-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.service-card {
+    background-color: var(--lightest);
+    border-radius: 12px;
+    padding: 2.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(122, 135, 122, 0.1);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.service-card-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary), var(--dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: white;
+    font-size: 1.8rem;
+}
+
+.service-card h3 {
+    color: var(--dark);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.service-card p {
+    color: var(--secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.service-card-link {
+    color: var(--dark);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.service-card-link:hover {
+    color: var(--primary);
+    gap: 0.8rem;
+}
+
 /* CARD STYLES ----- */
 
 .light-icon-card-center {
@@ -72,7 +140,7 @@ h1, h2, h3, h4, h5 {
 .light-icon-card {
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
     position: relative;
 }
@@ -115,10 +183,26 @@ h1, h2, h3, h4, h5 {
 /* TEXT ----- */
 
 .hero-title {
-    font-size: 3rem;
-    color: var(--darker);
-    margin-bottom: 1.5rem;
+  font-size: 3.4rem;
+  color: var(--darker);
+  margin-bottom: 1.5rem;
+  display: flex;            /* makes alignment easier */
+  justify-content: center;  /* center horizontally */
+  align-items: baseline;    /* align text on baseline */
+  flex-wrap: wrap;
+  gap: 0.3rem;
 }
+
+#typewriter {
+  border-right: 2px solid var(--dark);
+  white-space: nowrap;
+  display: inline-block;
+  vertical-align: baseline; /* keep aligned with text baseline */
+  line-height: 1.2;         /* matches heading better */
+  padding-left: 5px;
+  animation: blinkCursor 0.8s steps(2, start) infinite;
+}
+
 .hero-subtitle {
     font-size: 1.5rem;
     margin-bottom: 2rem;
@@ -168,7 +252,7 @@ h1, h2, h3, h4, h5 {
     overflow: hidden;
 }
 .hero-short {
-    padding: 10rem 0 6rem;
+    padding: 10rem 6rem;
     background: linear-gradient(to bottom, rgba(198, 226, 198, 0.9), rgba(216, 234, 216, 0.9)), url('../images/bg.png');
     background-size: cover;
     background-position: center;
@@ -193,8 +277,8 @@ h1, h2, h3, h4, h5 {
     linear-gradient(to bottom, rgba(198, 226, 198, 0.8), rgba(216, 234, 216, 0.8)),
     url('../images/bg.png');
     background-size: cover;
-    background-position: center;
-    filter: blur(4px);
+    background-position: center calc(100% - 40px);
+    filter: blur(2px);
     transform: scale(1.1);
     z-index: -1;
     transition: transform 0.1s ease-out;
@@ -329,6 +413,50 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 1rem;
 }
 
+/* Typewriter effect */
+#typewriter {
+  border-right: 2px solid var(--dark);
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  max-width: 100%;
+}
+
+/* CTA button group */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.secondary-cta {
+  background-color: transparent;
+  color: var(--dark) !important;
+  border: 2px solid var(--dark);
+}
+
+.secondary-cta:hover {
+  background-color: var(--dark);
+  color: white !important;
+}
+
+#typewriter {
+  border-right: 2px solid var(--dark);
+  white-space: nowrap;
+  display: inline-block;
+  vertical-align: baseline; /* keep aligned with text baseline */
+  line-height: 1.2;         /* matches heading better */
+  padding-left: 5px;
+  animation: blinkCursor 0.8s steps(2, start) infinite;
+}
+
+@keyframes blinkCursor {
+  0%, 49% { border-color: var(--dark); }
+  50%, 100% { border-color: transparent; }
+}
+
+
 /* UTIL CLASSES */
 
 /* flexbox utils */
@@ -445,7 +573,7 @@ h1, h2, h3, h4, h5 {
 .ptop30 { padding-top: 30px; }
 .ptop40 { padding-top: 40px; }
 .ptop50 { padding-top: 50px; }
-.ptop100 { padding-top: 100px; }
+.ptop0 { padding-top: 100px; }
 .ptop150 { padding-top: 150px; }
 .ptop200 { padding-top: 200px; }
 
@@ -504,6 +632,10 @@ h1, h2, h3, h4, h5 {
     .hero-subtitle { font-size: 1.2rem; }
     .grid-min300 { grid-template-columns: 1fr; }
     .light-icon-card { height: 350px; }
+    
+    .services-cards-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 480px) {
@@ -511,4 +643,3 @@ h1, h2, h3, h4, h5 {
         height: 380px;
     }
 }
-
