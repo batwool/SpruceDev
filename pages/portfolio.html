@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <title>Portfolio - Spruce Dev</title>
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/nav.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/footer.css">
 
     <!-- FONTS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link 
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" 
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <!-- Header & Navigation -->
     <header>
@@ -34,40 +35,28 @@
                 </ul>
 
                 <!-- Burger menu -->
-                <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    width="35" height="35" 
-                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="burger-menu-icon"
-                    id="open-burger-menu-icon"
-                    onclick="document.getElementById('burger-menu-overlay').classList.add('active')"
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="burger-menu-icon" id="open-burger-menu-icon"
+                    onclick="document.getElementById('burger-menu-overlay').classList.add('active')">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M4 8l16 0" />
                     <path d="M4 16l16 0" />
                 </svg>
-                <div 
-                    class="overlay" 
-                    id="burger-menu-overlay"
-                    onclick="document.getElementById('burger-menu-overlay').classList.remove('active')"
-                >
+                <div class="overlay" id="burger-menu-overlay"
+                    onclick="document.getElementById('burger-menu-overlay').classList.remove('active')">
                     <div class="burger-menu" onclick="event.stopPropagation()">
                         <div>
-                            <svg 
-                                xmlns="http://www.w3.org/2000/svg" 
-                                width="35" height="35" viewBox="0 0 24 24" 
-                                fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                class="icon icon-tabler icons-tabler-outline icon-tabler-x"
-                                onclick="document.getElementById('burger-menu-overlay').classList.remove('active')"
-                            >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-x"
+                                onclick="document.getElementById('burger-menu-overlay').classList.remove('active')">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                 <path d="M18 6l-12 12" />
                                 <path d="M6 6l12 12" />
                             </svg>
                         </div>
-                        
+
                         <ul class="burger-nav-links">
                             <li><a href="./about.html">About Us</a></li>
                             <li><a href="./services.html">Services</a></li>
@@ -82,5 +71,246 @@
             </nav>
         </div>
     </header>
+
+    <!-- Portfolio Hero Section -->
+    <section class="hero-short">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Featured Projects</h1>
+                <p class="hero-subtitle">A few examples of our past work</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="light-section">
+        <div class="container">
+            <div class="grid-2col">
+
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
+                            alt="GreenLeaf Consulting Website">
+                        <div class="project-card-overlay">
+                            <h3>GreenLeaf Consulting</h3>
+                            <p>Website redesign that boosted lead conversions by 35%.</p>
+                            <a href="#" class="btn">Visit Site</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1581276879432-15e50529f34b?auto=format&fit=crop&w=1200&q=80"
+                            alt="Forest Trails App">
+                        <div class="project-card-overlay">
+                            <h3>Forest Trails App</h3>
+                            <p>A sleek mobile app for hikers to explore and navigate forest trails.</p>
+                            <a href="#" class="btn">Visit Site</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=80"
+                            alt="Timber Crafts Store">
+                        <div class="project-card-overlay">
+                            <h3>Timber Crafts Store</h3>
+                            <p>E-commerce platform that increased sales by 40%.</p>
+                            <a href="#" class="btn">Visit Site</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="dark-gradient-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Testimonials</h2>
+                <p>What our clients say about working with us</p>
+            </div>
+
+            <div class="grid-min300">
+                <div class="dark-icon-card-center raise-hover-effect">
+                    <i class="fas fa-quote-left"></i>
+                    <h3>Amazing Results</h3>
+                    <p>"Spruce Dev transformed our online presence. Their attention to detail and creative solutions
+                        exceeded our
+                        expectations."</p>
+                    <p><strong>— Sarah Johnson</strong></p>
+                </div>
+
+                <div class="dark-icon-card-center raise-hover-effect">
+                    <i class="fas fa-quote-left"></i>
+                    <h3>Professional & Efficient</h3>
+                    <p>"The team delivered our e-commerce platform on time and within budget. The results have driven a
+                        40% increase
+                        in sales."</p>
+                    <p><strong>— Michael Chen</strong></p>
+                </div>
+
+                <div class="dark-icon-card-center raise-hover-effect">
+                    <i class="fas fa-quote-left"></i>
+                    <h3>Creative Solutions</h3>
+                    <p>"Their innovative approach to our mobile app created an engaging user experience that our
+                        customers love."</p>
+                    <p><strong>— Emily Rodriguez</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="dark-gradient-section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ready to Grow Your Business?</h2>
+                <p>Contact us today for a free consultation and estimate. Let's discuss how we can help your business
+                    thrive
+                    online.</p>
+                <a href="#contact" class="cta-button mtop50 inline-block">Get Your Free Estimate</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Spruce Development</h3>
+                    <p>Helping small businesses and tradesmen establish a strong online presence and attract more
+                        customers.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#process">Our Process</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#industries">Industries</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@sprucedev.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Main St, Anytown USA</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <svg class="tree-icon" viewBox="0 0 24 24">
+                    <path
+                        d="M12,22V18C12,18 8,16 8,11C8,7 12,4 12,4C12,4 16,7 16,11C16,16 12,18 12,18V22C12,22 16,20 16,16H14C14,18 12,20 12,20C12,20 10,18 10,16H8C8,20 12,22 12,22Z" />
+                </svg>
+                <p>&copy; 2023 Spruce Development. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
+
+<style>
+    .project-card {
+        border-radius: 12px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        aspect-ratio: 1/1;
+    }
+
+    .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    .project-image {
+        height: 100%;
+        object-fit: cover;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s ease;
+    }
+
+    .project-card:hover .project-image img {
+        transform: scale(1.05);
+    }
+
+    .project-card-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(42, 86, 66, 0.9);
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .project-card:hover .project-card-overlay {
+        opacity: 1;
+    }
+
+    .project-card-overlay h3 {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+    }
+
+    .project-card-overlay p {
+        font-size: 1rem;
+        margin-bottom: 50px;
+        line-height: 1.5;
+        max-width: 400px !important;
+    }
+
+    .project-card-overlay .btn {
+        background: #fff;
+        color: #2a5642;
+        padding: 8px 16px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .project-card-overlay .btn:hover {
+        background: #74ad8c;
+        color: #fff;
+    }
+</style>
+
 </html>
