@@ -153,6 +153,10 @@
     position: relative;
 }
 
+.process-step h3 {
+    margin-bottom: 15px;
+}
+
 .process-step:hover .step-number {
     background-color: var(--dark);
     transform: scale(1.1);
