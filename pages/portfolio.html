@@ -15,61 +15,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
+
+    <!-- COMPONENTS -->
+    <script src="../assets/components/Navbar.js"></script>
+    <script src="../assets/components/Footer.js"></script>
+    <script src="../assets/components/CTA.js"></script>
 </head>
 
 <body>
     <!-- Header & Navigation -->
     <header>
-        <div class="container">
-            <nav>
-                <div class="logo" onclick="window.location.href='./index.html'">
-                    <i class="fas fa-tree"></i>
-                    <span class="logo-text">SPRUCE DEV</span>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="./about.html">About Us</a></li>
-                    <li><a href="./services.html">Services</a></li>
-                    <li><a href="./process.html">Process</a></li>
-                    <li><a href="./portfolio.html"><strong>Portfolio</strong></a></li>
-                    <li><a href="#contact" class="cta-button">Contact Us</a></li>
-                </ul>
-
-                <!-- Burger menu -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="burger-menu-icon" id="open-burger-menu-icon"
-                    onclick="document.getElementById('burger-menu-overlay').classList.add('active')">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M4 8l16 0" />
-                    <path d="M4 16l16 0" />
-                </svg>
-                <div class="overlay" id="burger-menu-overlay"
-                    onclick="document.getElementById('burger-menu-overlay').classList.remove('active')">
-                    <div class="burger-menu" onclick="event.stopPropagation()">
-                        <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-x"
-                                onclick="document.getElementById('burger-menu-overlay').classList.remove('active')">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <path d="M18 6l-12 12" />
-                                <path d="M6 6l12 12" />
-                            </svg>
-                        </div>
-
-                        <ul class="burger-nav-links">
-                            <li><a href="./about.html">About Us</a></li>
-                            <li><a href="./services.html">Services</a></li>
-                            <li><a href="./process.html">Process</a></li>
-                            <li><a href="./portfolio.html"><strong>Portfolio</strong></a></li>
-                            <li style="margin-top: 25px;">
-                                <a href="#contact" class="cta-button">Contact Us</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
+        <site-navbar current="Portfolio"></site-navbar>
     </header>
 
     <!-- Portfolio Hero Section -->
@@ -169,64 +125,10 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="dark-gradient-section" id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Ready to Grow Your Business?</h2>
-                <p>Contact us today for a free consultation and estimate. Let's discuss how we can help your business
-                    thrive
-                    online.</p>
-                <a href="#contact" class="cta-button mtop50 inline-block">Get Your Free Estimate</a>
-            </div>
-        </div>
-    </section>
+    <site-cta></site-cta>
 
     <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Spruce Development</h3>
-                    <p>Helping small businesses and tradesmen establish a strong online presence and attract more
-                        customers.</p>
-                </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#process">Our Process</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#industries">Industries</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Contact Us</h3>
-                    <ul>
-                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
-                        <li><i class="fas fa-envelope"></i> info@sprucedev.com</li>
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Main St, Anytown USA</li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Follow Us</h3>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="copyright">
-                <svg class="tree-icon" viewBox="0 0 24 24">
-                    <path
-                        d="M12,22V18C12,18 8,16 8,11C8,7 12,4 12,4C12,4 16,7 16,11C16,16 12,18 12,18V22C12,22 16,20 16,16H14C14,18 12,20 12,20C12,20 10,18 10,16H8C8,20 12,22 12,22Z" />
-                </svg>
-                <p>&copy; 2023 Spruce Development. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <site-footer></site-footer>
 </body>
 
 <style>

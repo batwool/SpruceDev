@@ -16,72 +16,16 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" 
         rel="stylesheet"
     >
+
+    <!-- COMPONENTS -->
+    <script src="../assets/components/Navbar.js"></script>
+    <script src="../assets/components/Footer.js"></script>
+    <script src="../assets/components/CTA.js"></script>
 </head>
 <body>
     <!-- Header & Navigation -->
     <header>
-        <div class="container">
-            <nav>
-                <div class="logo" onclick="window.location.href='./index.html'">
-                    <i class="fas fa-tree"></i>
-                    <span class="logo-text">SPRUCE DEV</span>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="./about.html">About Us</a></li>
-                    <li><a href="./services.html">Services</a></li>
-                    <li><a href="./process.html"><strong>Process</strong></a></li>
-                    <li><a href="./portfolio.html">Portfolio</a></li>
-                    <li><a href="#contact" class="cta-button">Contact Us</a></li>
-                </ul>
-
-                <!-- Burger menu -->
-                <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    width="35" height="35" 
-                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="burger-menu-icon"
-                    id="open-burger-menu-icon"
-                    onclick="document.getElementById('burger-menu-overlay').classList.add('active')"
-                >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M4 8l16 0" />
-                    <path d="M4 16l16 0" />
-                </svg>
-                <div 
-                    class="overlay" 
-                    id="burger-menu-overlay"
-                    onclick="document.getElementById('burger-menu-overlay').classList.remove('active')"
-                >
-                    <div class="burger-menu" onclick="event.stopPropagation()">
-                        <div>
-                            <svg 
-                                xmlns="http://www.w3.org/2000/svg" 
-                                width="35" height="35" viewBox="0 0 24 24" 
-                                fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                class="icon icon-tabler icons-tabler-outline icon-tabler-x"
-                                onclick="document.getElementById('burger-menu-overlay').classList.remove('active')"
-                            >
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <path d="M18 6l-12 12" />
-                                <path d="M6 6l12 12" />
-                            </svg>
-                        </div>
-                        
-                        <ul class="burger-nav-links">
-                            <li><a href="./about.html">About Us</a></li>
-                            <li><a href="./services.html">Services</a></li>
-                            <li><a href="./process.html"><strong>Process</strong></a></li>
-                            <li><a href="./portfolio.html">Portfolio</a></li>
-                            <li style="margin-top: 25px;">
-                                <a href="#contact" class="cta-button">Contact Us</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
+        <site-navbar current="Process"></site-navbar>
     </header>
 
     <!-- Process Hero Section -->
@@ -220,71 +164,10 @@
     </section>
 
     <!-- Process CTA Section -->
-    <section class="cta-section process-cta">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Start Your Project?</h2>
-                <p>Let's discuss your needs and how our process can help you achieve your business goals</p>
-                <a href="#contact" class="cta-button">Begin Your Journey</a>
-            </div>
-        </div>
-    </section>
+    <site-cta></site-cta>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>SPRUCE DEV</h3>
-                    <p>Growing your digital presence with expertly crafted websites and marketing solutions.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="#">Web Development</a></li>
-                        <li><a href="#">Website Maintenance</a></li>
-                        <li><a href="#">Digital Marketing</a></li>
-                        <li><a href="#">SEO Optimization</a></li>
-                        <li><a href="#">E-commerce Solutions</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="./about.html">About Us</a></li>
-                        <li><a href="./services.html">Services</a></li>
-                        <li><a href="./process.html">Our Process</a></li>
-                        <li><a href="./portfolio.html">Portfolio</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Contact Info</h3>
-                    <ul>
-                        <li><i class="fas fa-envelope"></i> info@sprucedev.com</li>
-                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Digital Avenue, Tech City</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                <svg class="tree-icon" viewBox="0 0 24 24">
-                    <path d="M12 22V4M12 4L15 7M12 4L9 7M6 10L9 7M6 10L9 13M6 10H3H6ZM18 10L15 7M18 10L15 13M18 10H21H18ZM9 13L12 16L15 13M9 13V19V13ZM15 13V19V13Z" stroke="currentColor" stroke-width="2" fill="none"/>
-                </svg>
-                <p>&copy; 2023 Spruce Dev. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <site-footer></site-footer>
 </body>
 <style>
 /* Process-specific styles */

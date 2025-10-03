@@ -33,6 +33,10 @@ footer {
     transition: color 0.3s;
 }
 
+.footer-column p {
+    max-width: 200px;
+}
+
 .footer-column a:hover {
     color: var(--light);
 }
