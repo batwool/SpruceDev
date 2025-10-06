@@ -13,7 +13,18 @@ class SiteNavbar extends HTMLElement {
                         <li><a href="./about.html">About Us</a></li>
                         <li><a href="./services.html">Services</a></li>
                         <li><a href="./portfolio.html">Portfolio</a></li>
-                        <li><a href="#contact" class="cta-button">Contact Us</a></li>
+                        <li>
+                            <a 
+                                href="#contact" 
+                                class="cta-button" 
+                                onclick="
+                                    document.getElementById('contact-overlay').classList.add('active');
+                                    document.body.classList.add('no-scroll');
+                                "
+                            >
+                                Contact Us
+                            </a>
+                        </li>
                     </ul>
 
                     <!-- Burger menu -->
@@ -24,7 +35,10 @@ class SiteNavbar extends HTMLElement {
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="burger-menu-icon"
                         id="open-burger-menu-icon"
-                        onclick="document.getElementById('burger-menu-overlay').classList.add('active')"
+                        onclick="
+                            document.getElementById('burger-menu-overlay').classList.add('active');
+                            document.body.classList.add('no-scroll')
+                        "
                     >
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                         <path d="M4 8l16 0" />
@@ -33,7 +47,10 @@ class SiteNavbar extends HTMLElement {
                     <div 
                         class="overlay" 
                         id="burger-menu-overlay"
-                        onclick="document.getElementById('burger-menu-overlay').classList.remove('active')"
+                        onclick="
+                            document.getElementById('burger-menu-overlay').classList.remove('active');
+                            document.body.classList.remove('no-scroll');
+                        "
                     >
                         <div class="burger-menu" onclick="event.stopPropagation()">
                             <div>
@@ -43,7 +60,10 @@ class SiteNavbar extends HTMLElement {
                                     fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                     class="icon icon-tabler icons-tabler-outline icon-tabler-x"
-                                    onclick="document.getElementById('burger-menu-overlay').classList.remove('active')"
+                                    onclick="
+                                        document.getElementById('burger-menu-overlay').classList.remove('active');
+                                        document.body.classList.remove('no-scroll')
+                                    "
                                 >
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                     <path d="M18 6l-12 12" />
