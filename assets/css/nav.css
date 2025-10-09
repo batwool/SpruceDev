@@ -26,6 +26,11 @@ nav {
     margin-right: 0.5rem;
 }
 
+.logo img {
+    width: 50px;
+    margin-right: 10px;
+}
+
 .logo-text {
     font-size: 2rem; /* Increased from 1.8rem */
     font-weight: 700; /* Made bolder */

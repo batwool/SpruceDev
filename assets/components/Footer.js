@@ -34,9 +34,7 @@ class SiteFooter extends HTMLElement {
                         </div>
                     </div>
                     <div class="copyright">
-                        <svg class="tree-icon" viewBox="0 0 24 24">
-                            <path d="M12,22V18C12,18 8,16 8,11C8,7 12,4 12,4C12,4 16,7 16,11C16,16 12,18 12,18V22C12,22 16,20 16,16H14C14,18 12,20 12,20C12,20 10,18 10,16H8C8,20 12,22 12,22Z" />
-                        </svg>
+                        <img src="../assets/images/logo-small.png">
                         <p>&copy; 2025 Spruce Development. All rights reserved.</p>
                     </div>
                 </div>

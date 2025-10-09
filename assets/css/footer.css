@@ -75,8 +75,6 @@ footer {
 }
 
 /* Tree SVG in Footer */
-.tree-icon {
-    width: 40px;
-    height: 40px;
-    fill: var(--light);
+.copyright img {
+    width: 50px;
 }
