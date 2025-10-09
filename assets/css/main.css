@@ -200,6 +200,24 @@ input, textarea, select, select option {
 
 /* BUTTONS ----- */
 
+.dark-cta-button {
+    background-color: var(--darker);
+    color: white !important;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.dark-cta-button:hover {
+    background-color: #141f1a;
+}
+
 .cta-button {
     background-color: var(--dark);
     color: white !important;
