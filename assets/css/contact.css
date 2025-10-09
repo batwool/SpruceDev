@@ -123,6 +123,21 @@ textarea {
     color: #e74c3c;
 }
 
+.close-btn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 50px;
+    color: #fafafa;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
 @media (max-width: 480px) {
     .contact-header, .contact-form {
         padding: 20px;

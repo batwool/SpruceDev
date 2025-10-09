@@ -15,7 +15,6 @@ class SiteNavbar extends HTMLElement {
                         <li><a href="./portfolio.html">Portfolio</a></li>
                         <li>
                             <a 
-                                href="#contact" 
                                 class="cta-button" 
                                 onclick="
                                     document.getElementById('contact-overlay').classList.add('active');

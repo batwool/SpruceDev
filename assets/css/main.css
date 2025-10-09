@@ -211,6 +211,7 @@ input, textarea, select, select option {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    cursor: pointer;
 }
 
 .cta-button:hover {

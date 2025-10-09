@@ -82,7 +82,13 @@
 </head>
 <body>
     <!-- Popups -->
-    <div id="contact-overlay">
+    <div 
+        id="contact-overlay" 
+        onclick="
+            document.getElementById('contact-overlay').classList.remove('active') 
+            document.body.classList.remove('no-scroll')
+        "
+    >
         <site-contact></site-contact>
     </div>
 

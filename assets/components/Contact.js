@@ -1,7 +1,17 @@
 class SiteContact extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
-            <div class="contact-card">
+            <div class="contact-card" onclick="event.stopPropagation()">
+                <div 
+                    class="close-btn" 
+                    onclick="
+                        document.getElementById('contact-overlay').classList.remove('active') 
+                        document.body.classList.remove('no-scroll')
+                    "
+                >
+                    &times;
+                </div>
+                
                 <div class="contact-header">
                     <h2>Contact Us</h2>
                 </div>

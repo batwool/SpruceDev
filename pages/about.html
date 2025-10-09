@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/nav.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/contact.css">
 
     <!-- FONTS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -21,8 +22,20 @@
     <script src="../assets/components/Navbar.js"></script>
     <script src="../assets/components/Footer.js"></script>
     <script src="../assets/components/CTA.js"></script>
+    <script src="../assets/components/Contact.js"></script>
 </head>
 <body>
+    <!-- Popups -->
+    <div 
+        id="contact-overlay" 
+        onclick="
+            document.getElementById('contact-overlay').classList.remove('active') 
+            document.body.classList.remove('no-scroll')
+        "
+    >
+        <site-contact></site-contact>
+    </div>
+
     <!-- Header & Navigation -->
     <header>
         <site-navbar current="About Us"></site-navbar>
