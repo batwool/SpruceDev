@@ -152,6 +152,98 @@ input, textarea, select, select option {
     margin-bottom: 0.5rem;
 }
 
+/* === Mochi-Inspired Portfolio Gallery === */
+
+.mochi-portfolio-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+/* Group of smaller items */
+.portfolio-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Base style for all items */
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-6px);
+}
+
+/* Image style */
+.mochi-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 16px;
+  transition: transform 0.6s ease;
+}
+
+.portfolio-item:hover .mochi-image {
+  transform: scale(1.05);
+}
+
+/* Overlay effect */
+.mochi-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  color: white;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem;
+  border-radius: 16px;
+  transition: opacity 0.4s ease;
+}
+
+.portfolio-item:hover .mochi-overlay {
+  opacity: 1;
+}
+
+.mochi-overlay h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.mochi-overlay p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Shape sizing */
+.portfolio-item.wide {
+  aspect-ratio: 16 / 7;
+}
+
+.portfolio-item.square {
+  aspect-ratio: 1 / 1;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .mochi-portfolio-grid {
+    gap: 2rem;
+  }
+  .portfolio-item.wide {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+
 /* TEXT ----- */
 
 .hero-title {
