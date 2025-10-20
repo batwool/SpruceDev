@@ -26,6 +26,11 @@ class SiteContact extends HTMLElement {
                         <label for="email" class="required">Email Address</label>
                         <input type="email" id="email" name="email" required placeholder="your.email@example.com">
                     </div>
+
+                     <div class="form-group">
+                        <label for="phone" class="required">Phone Number</label>
+                        <input type="text" id="phone" name="phone" required placeholder="Your Phone Number">
+                    </div>
                     
                     <div class="form-group">
                         <label for="company">Company Name</label>
