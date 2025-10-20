@@ -5,8 +5,10 @@ class SiteCTA extends HTMLElement {
                 <div class="container">
                     <div class="section-title">
                         <h2>Ready to Grow Your Business?</h2>
-                        <p>Contact us today for a free consultation and estimate. Let's discuss how we can help your business thrive online.</p>
-                        <a href="#contact" class="dark-cta-button mtop50 inline-block">Get Your Free Estimate</a>
+                        <p style="color: white;">Contact us today for a free consultation and estimate. Let's discuss how we can help your business thrive online.</p>
+                        <a class="dark-cta-button mtop50 inline-block" onclick="document.getElementById('contact-overlay').classList.add('active');document.body.classList.add('no-scroll');">
+                        Get Your Free Estimate
+                        </a>
                     </div>
                 </div>
             </section>`;
