@@ -13,7 +13,14 @@ class SiteFooter extends HTMLElement {
                             <ul>
                                 <li><a href="./services.html">Services</a></li>
                                 <li><a href="./portfolio.html">Portfolio</a></li>
-                                <li><a href="./contact.html">Contact</a></li>
+                                <li>
+                                    <a onclick="
+                                        document.getElementById('contact-overlay').classList.add('active');
+                                        document.body.classList.add('no-scroll');
+                                    ">
+                                        Contact
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                         <div class="footer-column">

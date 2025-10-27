@@ -166,13 +166,10 @@ class SiteContact extends HTMLElement {
             // Send via EmailJS
             emailjs.send(serviceId, templateId, formData)
                 .then((result) => {
-                    console.log("Email sent successfully:", result.text);
-                    
                     form.reset(); // clear form
                     document.getElementById('contact-overlay').classList.remove('active') 
                     document.body.classList.remove('no-scroll')
                 }, (error) => {
-                    console.log(error)
                     console.error("Email sending failed:", error);
                     alert("There was an error sending your inquiry. Please try again later.");
                 })
