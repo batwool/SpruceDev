@@ -138,7 +138,12 @@ class SiteContact extends HTMLElement {
         attachPhoneFormatter(this.querySelector('#phone'));
             
         // Attach form handling
-        this.querySelector(".submit-btn").addEventListener("click", async (event) => {
+        this.querySelector(".submit-btn").addEventListener("click", (event) => {
+            event.preventDefault();
+
+            const publicKey = "znh6Lgwlg3oqicPmn";
+            emailjs.init(publicKey);
+
             const form = event.target.closest('form'); // get the nearest form
 
             const formData = {
@@ -148,7 +153,6 @@ class SiteContact extends HTMLElement {
                 company: form.company.value.trim(),
                 description: form.description.value.trim()
             };
-            console.log(formData);
 
             // Optional: simple validation
             if (!formData.name || !formData.email || !formData.phone || !formData.description) {
@@ -156,24 +160,26 @@ class SiteContact extends HTMLElement {
                 return;
             }
 
-            try {
-                // Send via EmailJS
-                const result = await emailjs.send(
-                    "service_b1q06vf",
-                    "template_n5qwcci",
-                    formData,
-                    "znh6Lgwlg3oqicPmn"
-                );
+            const serviceId = "service_b1q06vf";
+            const templateId = "template_n5qwcci";
 
-                console.log("Email sent successfully:", result.text);
-                alert("Your inquiry has been sent! We'll get back to you soon.");
-
-                // form.reset(); // clear form
-            } catch (error) {
-                console.log(error)
-                console.error("Email sending failed:", error);
-                alert("There was an error sending your inquiry. Please try again later.");
-            }
+            // Send via EmailJS
+            emailjs.send(serviceId, templateId, formData)
+                .then((result) => {
+                    console.log("Email sent successfully:", result.text);
+                    
+                    form.reset(); // clear form
+                    document.getElementById('contact-overlay').classList.remove('active') 
+                    document.body.classList.remove('no-scroll')
+                }, (error) => {
+                    console.log(error)
+                    console.error("Email sending failed:", error);
+                    alert("There was an error sending your inquiry. Please try again later.");
+                })
+                .finally(() => {
+                    //document.getElementById('send-inquiry').style.display = "block";
+                    //document.getElementById('loading').style.display = "none";
+                });
         });
     }
 }
