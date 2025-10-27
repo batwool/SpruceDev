@@ -19,8 +19,8 @@ class SiteFooter extends HTMLElement {
                         <div class="footer-column">
                             <h3>Contact Us</h3>
                             <ul>
-                                <li><i class="fas fa-phone"></i> (555) 123-4567</li>
-                                <li><i class="fas fa-envelope"></i> info@sprucedev.com</li>
+                                <li><i class="fas fa-phone"></i> (970) 331-4508</li>
+                                <li><i class="fas fa-envelope"></i> spruce.webdev@gmail.com</li>
                             </ul>
                         </div>
                         <div class="footer-column">
