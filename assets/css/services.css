@@ -53,6 +53,28 @@
     line-height: 1.7;
 }
 
+.feature-list {
+    list-style: none;
+    margin: 2rem 0;
+}
+
+.feature-list li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+    color: var(--darker);
+    line-height: 1.6;
+}
+
+.feature-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
 /* Pricing Section */
 .pricing-grid {
     display: grid;
@@ -176,23 +198,48 @@
     line-height: 1.6;
 }
 
-/* Responsive Design */
+/* Enhanced Mobile Responsiveness */
 @media (max-width: 968px) {
     .service-detail,
     .service-detail.reverse {
         flex-direction: column;
         text-align: center;
         gap: 2rem;
+        margin-bottom: 4rem;
+    }
+    
+    .service-detail-content {
+        width: 100%;
+        min-width: 100%;
+    }
+    
+    .service-detail-image {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
     }
     
     .service-detail-image i {
-        font-size: 6rem;
+        font-size: 5rem;
+    }
+    
+    .service-detail h2 {
+        font-size: 1.8rem;
+    }
+    
+    .service-detail p {
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 768px) {
     .pricing-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .pricing-card {
+        padding: 2rem;
     }
     
     .pricing-card.featured {
@@ -205,5 +252,40 @@
     
     .faq-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .faq-item {
+        padding: 1.25rem;
+    }
+    
+    .feature-list li {
+        padding-left: 1.5rem;
+        margin-bottom: 0.8rem;
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-detail {
+        margin-bottom: 3rem;
+        gap: 1.5rem;
+    }
+    
+    .service-detail h2 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+    
+    .pricing-card {
+        padding: 1.5rem;
+    }
+    
+    .price {
+        font-size: 2rem;
+    }
+    
+    .faq-item h3 {
+        font-size: 1.1rem;
     }
 }
