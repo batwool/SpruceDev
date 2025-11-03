@@ -6,7 +6,7 @@ class SiteNavbar extends HTMLElement {
             <div class="container">
                 <nav>
                     <div class="logo" onclick="window.location.href='./index.html'">
-                        <img src="../assets/images/logo-small.png">
+                        <img src="assets/images/logo-small.png">
                         <span class="logo-text">SPRUCE DEV</span>
                     </div>
                     <ul class="nav-links">

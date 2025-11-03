@@ -40,7 +40,7 @@ class SiteFooter extends HTMLElement {
                         </div>
                     </div>
                     <div class="copyright">
-                        <img src="../assets/images/logo-small.png">
+                        <img src="assets/images/logo-small.png">
                         <p>&copy; 2025 Spruce Development. All rights reserved.</p>
                     </div>
                 </div>
