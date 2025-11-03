@@ -75,7 +75,15 @@ class SiteNavbar extends HTMLElement {
                                 <li><a href="./services.html">Services</a></li>
                                 <li><a href="./portfolio.html">Portfolio</a></li>
                                 <li style="margin-top: 25px;">
-                                    <a href="#contact" class="cta-button">Contact Us</a>
+                                    <a 
+                                        class="cta-button" 
+                                        onclick="
+                                            document.getElementById('contact-overlay').classList.add('active');
+                                            document.body.classList.add('no-scroll');
+                                        "
+                                    >
+                                        Contact Us
+                                    </a>
                                 </li>
                             </ul>
                         </div>
