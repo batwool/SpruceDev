@@ -419,27 +419,6 @@ input, textarea, select, select option {
     margin: 0 auto;
 }
 
-/* feature list */
-.feature-list {
-    list-style: none;
-}
-
-.feature-list li {
-    margin-bottom: 0.8rem;
-    position: relative;
-    padding-left: 1.8rem;
-    color: var(--darker);
-}
-
-.feature-list li:before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: var(--primary);
-    font-size: 1.5rem;
-    line-height: 1;
-}
-
 /* effects */
 
 .raise-hover-effect:hover {

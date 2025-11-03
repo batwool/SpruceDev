@@ -203,9 +203,14 @@
     .service-detail,
     .service-detail.reverse {
         flex-direction: column;
-        text-align: center;
         gap: 2rem;
         margin-bottom: 4rem;
+        max-width: 600px;
+        margin: 0 auto 50px auto;
+    }
+
+    #services-section {
+        padding-top: 75px;
     }
     
     .service-detail-content {
@@ -215,7 +220,6 @@
     
     .service-detail-image {
         width: 100%;
-        max-width: 500px;
         margin: 0 auto;
     }
     
