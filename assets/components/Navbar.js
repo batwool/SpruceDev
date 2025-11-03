@@ -72,7 +72,7 @@ class SiteNavbar extends HTMLElement {
                             
                             <ul class="burger-nav-links">
                                 <li><a href="./about.html">About Us</a></li>
-                                <li><a href="./process.html">Process</a></li>
+                                <li><a href="./services.html">Services</a></li>
                                 <li><a href="./portfolio.html">Portfolio</a></li>
                                 <li style="margin-top: 25px;">
                                     <a href="#contact" class="cta-button">Contact Us</a>
