@@ -664,3 +664,18 @@ input, textarea, select, select option {
         height: 380px;
     }
 }
+
+/* Fix right-aligned step numbers on mobile */
+@media (max-width: 768px) {
+    .process-step {
+        text-align: center;
+    }
+
+    .process-step .step-number {
+        margin: 0 auto 1rem;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
